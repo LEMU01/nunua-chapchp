@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAP CHAP - Duka La Mtandaoni</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header, footer { background: #006400; color: white; padding: 1rem; text-align: center; }
+    nav ul { list-style: none; padding: 0; display: flex; justify-content: center; gap: 2rem; }
+    nav a { color: white; text-decoration: none; }
+    section { padding: 2rem; }
+    .category { margin-bottom: 3rem; }
+    .product { background: white; border: 1px solid #ccc; padding: 1rem; margin: 1rem 0; border-radius: 8px; }
+    .product h3 { margin-top: 0; }
+    .product button { background: #28a745; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CHAP CHAP</h1>
+    <nav>
+      <ul>
+        <li><a href="#nyumbani">Nyumbani</a></li>
+        <li><a href="#bidhaa">Bidhaa</a></li>
+        <li><a href="#malipo">Malipo</a></li>
+        <li><a href="#wasiliana">Wasiliana Nasi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="nyumbani">
+    <h2>Karibu CHAP CHAP</h2>
+    <p>Tunauza bidhaa mbalimbali kwa matumizi ya nyumbani, ofisini, mashuleni na zaidi. Nunua kwa urahisi na fanya malipo papo hapo!</p>
+  </section>
+
+  <section id="bidhaa">
+    <h2>Bidhaa Zetu</h2>
+
+    <div class="category">
+      <h3>🍎 Bidhaa za Vyakula na Vinywaji</h3>
+      <div class="product"><h3>Mchele</h3><p>1 kg - TZS 2,000 – 3,500</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Mafuta ya kupikia</h3><p>1 lita - TZS 5,000 – 7,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Nyama ya ng'ombe</h3><p>1 kg - TZS 8,000 – 12,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>🧺 Bidhaa za Usafi na Vipodozi</h3>
+      <div class="product"><h3>Sabuni ya kufulia</h3><p>1 kg - TZS 2,000 – 3,500</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Dawa ya meno</h3><p>100 ml - TZS 1,500 – 3,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>🏠 Bidhaa za Nyumbani na Umeme</h3>
+      <div class="product"><h3>Gesi ya kupikia</h3><p>6 kg - TZS 20,000 – 25,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Jiko la gesi</h3><p>1 - TZS 50,000 – 150,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>📏 Vifaa vya Ujenzi</h3>
+      <div class="product"><h3>Saruji</h3><p>50 kg - TZS 15,000 – 20,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Mabati</h3><p>Gauge 28 - TZS 20,000 – 30,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>🚗 Bidhaa za Usafiri na Mafuta</h3>
+      <div class="product"><h3>Mafuta ya petroli</h3><p>1 lita - TZS 3,000 – 3,500</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Pikipiki</h3><p>1 - TZS 1,500,000 – 3,000,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>🧵 Bidhaa za Afya</h3>
+      <div class="product"><h3>Dawa za malaria</h3><p>Dozi - TZS 5,000 – 10,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Vifaa vya afya (gloves)</h3><p>Pakiti - TZS 10,000 – 20,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>🧒 Bidhaa za Watoto</h3>
+      <div class="product"><h3>Diapers</h3><p>Pakiti - TZS 10,000 – 30,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>Vifaa vya shule</h3><p>Seti - TZS 20,000 – 100,000</p><button>Weka Oda</button></div>
+    </div>
+
+    <div class="category">
+      <h3>📱 Bidhaa za Teknolojia</h3>
+      <div class="product"><h3>Simu ya Sony Xperia Ace II</h3><p>RAM 4GB - TZS 185,000</p><button>Weka Oda</button></div>
+      <div class="product"><h3>MacBook Pro 14”</h3><p>512GB - TZS 6,250,000</p><button>Weka Oda</button></div>
+    </div>
+
+  </section>
+
+  <section id="malipo">
+    <h2>Fanya Malipo</h2>
+    <form action="https://payment-gateway.example.com/process" method="POST">
+      <label>Jina Kamili:</label><br>
+      <input type="text" name="jina" required><br><br>
+
+      <label>Aina ya Malipo:</label><br>
+      <select name="aina_malipo">
+        <option value="mpesa">M-Pesa</option>
+        <option value="tigopesa">Tigo Pesa</option>
+        <option value="airtelmoney">Airtel Money</option>
+        <option value="kadi">Kadi ya Benki</option>
+      </select><br><br>
+
+      <label>Jumla ya Malipo:</label><br>
+      <input type="number" name="kiasi" required><br><br>
+
+      <button type="submit">Lipa Sasa</button>
+    </form>
+  </section>
+
+  <section id="wasiliana">
+    <h2>Wasiliana Nasi</h2>
+    <p>Simu: +255 712 345 678</p>
+    <p>Barua pepe: info@chapchap.co.tz</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CHAP CHAP - Haki zote zimehifadhiwa.</p>
+  </footer>
+</body>
+</html>
