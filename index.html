@@ -1,130 +1,80 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nunua Chap Chap</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHAP CHAP - Duka La Mtandaoni</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
-  <header class="bg-green-700 text-white p-4 flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      <img src="/logo.png" alt="Logo" class="h-10 w-10 object-contain" />
-      <span class="font-bold text-2xl">Nunua Chap Chap</span>
-    </div>
-    <span class="text-sm">Bidhaa za Nyumbani</span>
+<body>
+  <header>
+    <h1>CHAP CHAP</h1>
+    <nav>
+      <ul>
+        <li><a href="#nyumbani">Nyumbani</a></li>
+        <li><a href="#bidhaa">Bidhaa</a></li>
+        <li><a href="#malipo">Malipo</a></li>
+        <li><a href="#wasiliana">Wasiliana Nasi</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="container mx-auto p-4">
-    <section class="mb-6">
-      <h2 class="text-xl font-semibold mb-2">Ongeza Bidhaa</h2>
-      <form id="productForm" class="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <input type="text" id="productName" placeholder="Jina la bidhaa" class="p-2 border rounded" required />
-        <input type="number" id="productPrice" placeholder="Bei" class="p-2 border rounded" required />
-        <input type="text" id="productImage" placeholder="Image URL" class="p-2 border rounded" required />
-        <select id="productCategory" class="p-2 border rounded" required>
-          <option value="">Chagua kundi</option>
-          <option value="Vyombo">Vyombo</option>
-          <option value="Vifaa vya kupikia">Vifaa vya kupikia</option>
-          <option value="Samani">Samani</option>
-        </select>
-        <button type="submit" class="bg-green-600 text-white rounded p-2 hover:bg-green-700">Ongeza</button>
-      </form>
-    </section>
+  <section id="nyumbani">
+    <h2>Karibu CHAP CHAP</h2>
+    <p>Tunauza bidhaa mbalimbali kwa matumizi ya nyumbani, ofisini, mashuleni na zaidi. Nunua kwa urahisi na fanya malipo papo hapo!</p>
+  </section>
 
-    <section>
-      <h2 class="text-xl font-semibold mb-4">Orodha ya Bidhaa</h2>
-      <div id="productListContainer"></div>
-    </section>
-  </main>
+  <section id="bidhaa">
+    <h2>Bidhaa Zetu</h2>
+    <div class="product">
+      <img src="sofa.jpg" alt="Sofa">
+      <h3>Sofa</h3>
+      <p>Tsh 450,000</p>
+      <button>Ongeza Kwenye Kapu</button>
+    </div>
+    <div class="product">
+      <img src="meza.jpg" alt="Meza ya Ofisi">
+      <h3>Meza ya Ofisi</h3>
+      <p>Tsh 300,000</p>
+      <button>Ongeza Kwenye Kapu</button>
+    </div>
+    <div class="product">
+      <img src="daftari.jpg" alt="Daftari la Shule">
+      <h3>Daftari la Shule</h3>
+      <p>Tsh 2,000</p>
+      <button>Ongeza Kwenye Kapu</button>
+    </div>
+  </section>
 
-  <script>
-    const productForm = document.getElementById('productForm');
-    const productListContainer = document.getElementById('productListContainer');
+  <section id="malipo">
+    <h2>Fanya Malipo</h2>
+    <form action="https://payment-gateway.example.com/process" method="POST">
+      <label>Jina Kamili:</label><br>
+      <input type="text" name="jina" required><br><br>
 
-    let products = [
-      { id: 1, name: "Sufuria Seti", price: 50000, image: "/sufuria.jpg", category: "Vifaa vya kupikia" },
-      { id: 2, name: "Kisu cha jikoni", price: 10000, image: "/kisu.jpg", category: "Vifaa vya kupikia" },
-      { id: 3, name: "Meza ya chakula", price: 150000, image: "/meza.jpg", category: "Samani" },
-    ];
+      <label>Aina ya Malipo:</label><br>
+      <select name="aina_malipo">
+        <option value="mpesa">M-Pesa</option>
+        <option value="tigopesa">Tigo Pesa</option>
+        <option value="airtelmoney">Airtel Money</option>
+        <option value="kadi">Kadi ya Benki</option>
+      </select><br><br>
 
-    function groupByCategory(items) {
-      return items.reduce((acc, item) => {
-        acc[item.category] = acc[item.category] || [];
-        acc[item.category].push(item);
-        return acc;
-      }, {});
-    }
+      <label>Jumla ya Malipo:</label><br>
+      <input type="number" name="kiasi" required><br><br>
 
-    function renderProducts() {
-      const grouped = groupByCategory(products);
-      productListContainer.innerHTML = "";
+      <button type="submit">Lipa Sasa</button>
+    </form>
+  </section>
 
-      for (const category in grouped) {
-        const section = document.createElement('section');
-        section.className = "mb-6";
+  <section id="wasiliana">
+    <h2>Wasiliana Nasi</h2>
+    <p>Simu: +255 712 345 678</p>
+    <p>Barua pepe: info@chapchap.co.tz</p>
+  </section>
 
-        const title = document.createElement('h3');
-        title.className = "text-lg font-bold text-gray-700 mb-2";
-        title.textContent = category;
-
-        const grid = document.createElement('div');
-        grid.className = "grid grid-cols-1 md:grid-cols-3 gap-4";
-
-        grouped[category].forEach(product => {
-          const div = document.createElement('div');
-          div.className = "bg-white p-4 rounded shadow";
-          div.innerHTML = `
-            <img src="${product.image}" class="h-32 w-full object-cover rounded mb-2" alt="${product.name}" />
-            <h4 class="font-bold">${product.name}</h4>
-            <p class="text-green-700">${product.price.toLocaleString()} TZS</p>
-            <div class="mt-2 flex gap-2">
-              <button onclick="editProduct(${product.id})" class="bg-blue-600 text-white px-2 py-1 rounded">Hariri</button>
-              <button onclick="deleteProduct(${product.id})" class="bg-red-600 text-white px-2 py-1 rounded">Futa</button>
-            </div>
-          `;
-          grid.appendChild(div);
-        });
-
-        section.appendChild(title);
-        section.appendChild(grid);
-        productListContainer.appendChild(section);
-      }
-    }
-
-    productForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('productName').value;
-      const price = parseInt(document.getElementById('productPrice').value);
-      const image = document.getElementById('productImage').value;
-      const category = document.getElementById('productCategory').value;
-      const id = products.length ? products[products.length - 1].id + 1 : 1;
-      products.push({ id, name, price, image, category });
-      productForm.reset();
-      renderProducts();
-    });
-
-    function deleteProduct(id) {
-      products = products.filter(p => p.id !== id);
-      renderProducts();
-    }
-
-    function editProduct(id) {
-      const product = products.find(p => p.id === id);
-      const name = prompt("Badilisha jina:", product.name);
-      const price = prompt("Badilisha bei:", product.price);
-      const image = prompt("Badilisha picha (URL):", product.image);
-      const category = prompt("Badilisha kundi:", product.category);
-      if (name && price && image && category) {
-        product.name = name;
-        product.price = parseInt(price);
-        product.image = image;
-        product.category = category;
-        renderProducts();
-      }
-    }
-
-    renderProducts();
-  </script>
+  <footer>
+    <p>&copy; 2025 CHAP CHAP - Haki zote zimehifadhiwa.</p>
+  </footer>
 </body>
 </html>
